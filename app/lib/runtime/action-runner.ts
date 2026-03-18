@@ -308,6 +308,38 @@ export class ActionRunner {
     const [command, ...args] = action.content.trim().split(/\s+/);
     console.log(`[ActionRunner] Spawning background process: ${command} ${JSON.stringify(args)}`);
 
+    // Auto-heal missing dependencies common with lightweight AI models
+    try {
+      const hasViteConfig = await webcontainer.fs.readFile('vite.config.js', 'utf-8').catch(() => null) 
+        || await webcontainer.fs.readFile('vite.config.ts', 'utf-8').catch(() => null);
+        
+      if (hasViteConfig && hasViteConfig.includes('@vitejs/plugin-react')) {
+        const pkgJsonRaw = await webcontainer.fs.readFile('package.json', 'utf-8').catch(() => null);
+        if (pkgJsonRaw) {
+          const pkg = JSON.parse(pkgJsonRaw);
+          const allDeps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
+          const missing: string[] = [];
+          
+          if (!allDeps['@vitejs/plugin-react']) missing.push('@vitejs/plugin-react');
+          if (!allDeps['vite']) missing.push('vite');
+          if (!allDeps['react']) missing.push('react');
+          if (!allDeps['react-dom']) missing.push('react-dom');
+          
+          if (missing.length > 0) {
+            terminal?.write(`\r\n\x1b[33m⚡ Auto-correction en cours : Installation des dépendances vitales oubliées par l'IA (${missing.join(', ')})...\x1b[0m\r\n`);
+            
+            const p = await webcontainer.spawn('npm', ['install', ...missing, '--legacy-peer-deps', '-D']);
+            p.output.pipeTo(new WritableStream({ write(data) { terminal?.write(data); } })).catch(() => {});
+            await p.exit;
+            
+            terminal?.write(`\x1b[32m✓ Correction terminée. Démarrage du serveur...\x1b[0m\r\n`);
+          }
+        }
+      }
+    } catch(e) {
+       console.error('[ActionRunner] Auto-heal check failed:', e);
+    }
+
     const process = await webcontainer.spawn(command, args, {
       terminal: {
         cols: terminal?.cols ?? 80,
@@ -600,6 +632,18 @@ export class ActionRunner {
     warning?: string;
   }> {
     const trimmedCommand = command.trim();
+
+    // Handle npm peer dependency issues by automatically adding --legacy-peer-deps
+    if (/\bnpm\s+(install|i)\b/.test(trimmedCommand) && !trimmedCommand.includes('--legacy-peer-deps')) {
+      return {
+        shouldModify: true,
+        modifiedCommand: trimmedCommand.replace(
+          /(^|[;&|]\s*)(npm\s+(?:install|i)\b[^;&|]*)/g,
+          (match, prefix, cmd) => `${prefix}${cmd.trimEnd()} --legacy-peer-deps`
+        ),
+        warning: 'Added --legacy-peer-deps flag to prevent resolution conflicts',
+      };
+    }
 
     // Handle rm commands that might fail due to missing files
     if (trimmedCommand.startsWith('rm ') && !trimmedCommand.includes(' -f')) {
