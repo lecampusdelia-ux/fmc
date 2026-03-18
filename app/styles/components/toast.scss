@@ -1,0 +1,23 @@
+@use '../z-index';
+
+.Toastify__toast-container {
+  @extend .z-toast;
+}
+
+.Toastify__toast {
+  --at-apply: shadow-md;
+
+  background-color: var(--fmc-elements-bg-depth-2);
+  color: var(--fmc-elements-textPrimary);
+  border: 1px solid var(--fmc-elements-borderColor);
+}
+
+.Toastify__close-button {
+  color: var(--fmc-elements-item-contentDefault);
+  opacity: 1;
+  transition: none;
+
+  &:hover {
+    color: var(--fmc-elements-item-contentActive);
+  }
+}

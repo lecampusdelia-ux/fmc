@@ -1,0 +1,255 @@
+/* Color Tokens Light Theme */
+:root,
+:root[data-theme='light'] {
+  --fmc-elements-borderColor: theme('colors.alpha.gray.10');
+  --fmc-elements-borderColorActive: theme('colors.accent.600');
+
+  --fmc-elements-bg-depth-1: theme('colors.white');
+  --fmc-elements-bg-depth-2: theme('colors.gray.50');
+  --fmc-elements-bg-depth-3: theme('colors.gray.200');
+  --fmc-elements-bg-depth-4: theme('colors.alpha.gray.5');
+
+  --fmc-elements-textPrimary: theme('colors.gray.950');
+  --fmc-elements-textSecondary: theme('colors.gray.600');
+  --fmc-elements-textTertiary: theme('colors.gray.500');
+
+  --fmc-elements-code-background: theme('colors.gray.100');
+  --fmc-elements-code-text: theme('colors.gray.950');
+
+  --fmc-elements-button-primary-background: theme('colors.alpha.accent.10');
+  --fmc-elements-button-primary-backgroundHover: theme('colors.alpha.accent.20');
+  --fmc-elements-button-primary-text: theme('colors.accent.500');
+
+  --fmc-elements-button-secondary-background: theme('colors.alpha.gray.5');
+  --fmc-elements-button-secondary-backgroundHover: theme('colors.alpha.gray.10');
+  --fmc-elements-button-secondary-text: theme('colors.gray.950');
+
+  --fmc-elements-button-danger-background: theme('colors.alpha.red.10');
+  --fmc-elements-button-danger-backgroundHover: theme('colors.alpha.red.20');
+  --fmc-elements-button-danger-text: theme('colors.fmcRed.500');
+
+  --fmc-elements-item-contentDefault: theme('colors.alpha.gray.50');
+  --fmc-elements-item-contentActive: theme('colors.gray.950');
+  --fmc-elements-item-contentAccent: theme('colors.accent.700');
+  --fmc-elements-item-contentDanger: theme('colors.fmcRed.500');
+  --fmc-elements-item-backgroundDefault: rgba(0, 0, 0, 0);
+  --fmc-elements-item-backgroundActive: theme('colors.alpha.gray.5');
+  --fmc-elements-item-backgroundAccent: theme('colors.alpha.accent.10');
+  --fmc-elements-item-backgroundDanger: theme('colors.alpha.red.10');
+
+  --fmc-elements-loader-background: theme('colors.alpha.gray.10');
+  --fmc-elements-loader-progress: theme('colors.accent.500');
+
+  --fmc-elements-artifacts-background: theme('colors.white');
+  --fmc-elements-artifacts-backgroundHover: theme('colors.alpha.gray.2');
+  --fmc-elements-artifacts-borderColor: var(--fmc-elements-borderColor);
+  --fmc-elements-artifacts-inlineCode-background: theme('colors.gray.100');
+  --fmc-elements-artifacts-inlineCode-text: var(--fmc-elements-textPrimary);
+
+  --fmc-elements-actions-background: theme('colors.white');
+  --fmc-elements-actions-code-background: theme('colors.gray.800');
+
+  --fmc-elements-messages-background: theme('colors.gray.100');
+  --fmc-elements-messages-linkColor: theme('colors.accent.500');
+  --fmc-elements-messages-code-background: theme('colors.gray.800');
+  --fmc-elements-messages-inlineCode-background: theme('colors.gray.200');
+  --fmc-elements-messages-inlineCode-text: theme('colors.gray.800');
+
+  --fmc-elements-icon-success: theme('colors.green.500');
+  --fmc-elements-icon-error: theme('colors.fmcRed.500');
+  --fmc-elements-icon-primary: theme('colors.gray.950');
+  --fmc-elements-icon-secondary: theme('colors.gray.600');
+  --fmc-elements-icon-tertiary: theme('colors.gray.500');
+
+  --fmc-elements-dividerColor: theme('colors.gray.100');
+
+  --fmc-elements-prompt-background: theme('colors.alpha.white.80');
+
+  --fmc-elements-sidebar-dropdownShadow: theme('colors.alpha.gray.10');
+  --fmc-elements-sidebar-buttonBackgroundDefault: theme('colors.alpha.accent.10');
+  --fmc-elements-sidebar-buttonBackgroundHover: theme('colors.alpha.accent.20');
+  --fmc-elements-sidebar-buttonText: theme('colors.accent.700');
+
+  --fmc-elements-preview-addressBar-background: theme('colors.gray.100');
+  --fmc-elements-preview-addressBar-backgroundHover: theme('colors.alpha.gray.5');
+  --fmc-elements-preview-addressBar-backgroundActive: theme('colors.white');
+  --fmc-elements-preview-addressBar-text: var(--fmc-elements-textSecondary);
+  --fmc-elements-preview-addressBar-textActive: var(--fmc-elements-textPrimary);
+
+  --fmc-elements-terminals-background: theme('colors.white');
+  --fmc-elements-terminals-buttonBackground: var(--fmc-elements-bg-depth-4);
+
+  --fmc-elements-cta-background: theme('colors.gray.100');
+  --fmc-elements-cta-text: theme('colors.gray.950');
+
+  /* Terminal Colors */
+  --fmc-terminal-background: var(--fmc-elements-terminals-background);
+  --fmc-terminal-foreground: #333333;
+  --fmc-terminal-selection-background: #00000040;
+  --fmc-terminal-black: #000000;
+  --fmc-terminal-red: #cd3131;
+  --fmc-terminal-green: #00bc00;
+  --fmc-terminal-yellow: #949800;
+  --fmc-terminal-blue: #0451a5;
+  --fmc-terminal-magenta: #bc05bc;
+  --fmc-terminal-cyan: #0598bc;
+  --fmc-terminal-white: #555555;
+  --fmc-terminal-brightBlack: #686868;
+  --fmc-terminal-brightRed: #cd3131;
+  --fmc-terminal-brightGreen: #00bc00;
+  --fmc-terminal-brightYellow: #949800;
+  --fmc-terminal-brightBlue: #0451a5;
+  --fmc-terminal-brightMagenta: #bc05bc;
+  --fmc-terminal-brightCyan: #0598bc;
+  --fmc-terminal-brightWhite: #a5a5a5;
+  --modern-scrollbar-thumb-background: rgba(100, 100, 100, 0.3); // Example light theme color
+  --modern-scrollbar-thumb-backgroundHover: rgba(74, 74, 74, 0.8);
+}
+
+/* Color Tokens Dark Theme */
+:root,
+:root[data-theme='dark'] {
+  --fmc-elements-borderColor: theme('colors.alpha.white.10');
+  --fmc-elements-borderColorActive: theme('colors.accent.500');
+
+  --fmc-elements-bg-depth-1: theme('colors.gray.950');
+  --fmc-elements-bg-depth-2: theme('colors.gray.900');
+  --fmc-elements-bg-depth-3: theme('colors.gray.800');
+  --fmc-elements-bg-depth-4: theme('colors.alpha.white.5');
+
+  --fmc-elements-textPrimary: theme('colors.white');
+  --fmc-elements-textSecondary: theme('colors.gray.400');
+  --fmc-elements-textTertiary: theme('colors.gray.500');
+
+  --fmc-elements-code-background: theme('colors.gray.800');
+  --fmc-elements-code-text: theme('colors.white');
+
+  --fmc-elements-button-primary-background: theme('colors.alpha.accent.10');
+  --fmc-elements-button-primary-backgroundHover: theme('colors.alpha.accent.20');
+  --fmc-elements-button-primary-text: theme('colors.accent.500');
+
+  --fmc-elements-button-secondary-background: theme('colors.alpha.white.5');
+  --fmc-elements-button-secondary-backgroundHover: theme('colors.alpha.white.10');
+  --fmc-elements-button-secondary-text: theme('colors.white');
+
+  --fmc-elements-button-danger-background: theme('colors.alpha.red.10');
+  --fmc-elements-button-danger-backgroundHover: theme('colors.alpha.red.20');
+  --fmc-elements-button-danger-text: theme('colors.fmcRed.500');
+
+  --fmc-elements-item-contentDefault: theme('colors.alpha.white.50');
+  --fmc-elements-item-contentActive: theme('colors.white');
+  --fmc-elements-item-contentAccent: theme('colors.accent.500');
+  --fmc-elements-item-contentDanger: theme('colors.fmcRed.500');
+  --fmc-elements-item-backgroundDefault: rgba(255, 255, 255, 0);
+  --fmc-elements-item-backgroundActive: theme('colors.alpha.white.10');
+  --fmc-elements-item-backgroundAccent: theme('colors.alpha.accent.10');
+  --fmc-elements-item-backgroundDanger: theme('colors.alpha.red.10');
+
+  --fmc-elements-loader-background: theme('colors.alpha.gray.10');
+  --fmc-elements-loader-progress: theme('colors.accent.500');
+
+  --fmc-elements-artifacts-background: theme('colors.gray.900');
+  --fmc-elements-artifacts-backgroundHover: theme('colors.alpha.white.5');
+  --fmc-elements-artifacts-borderColor: var(--fmc-elements-borderColor);
+  --fmc-elements-artifacts-inlineCode-background: theme('colors.gray.800');
+  --fmc-elements-artifacts-inlineCode-text: theme('colors.white');
+
+  --fmc-elements-actions-background: theme('colors.gray.900');
+  --fmc-elements-actions-code-background: theme('colors.gray.800');
+
+  --fmc-elements-messages-background: theme('colors.gray.800');
+  --fmc-elements-messages-linkColor: theme('colors.accent.500');
+  --fmc-elements-messages-code-background: theme('colors.gray.900');
+  --fmc-elements-messages-inlineCode-background: theme('colors.gray.700');
+  --fmc-elements-messages-inlineCode-text: var(--fmc-elements-textPrimary);
+
+  --fmc-elements-icon-success: theme('colors.green.400');
+  --fmc-elements-icon-error: theme('colors.fmcRed.400');
+  --fmc-elements-icon-primary: theme('colors.gray.950');
+  --fmc-elements-icon-secondary: theme('colors.gray.600');
+  --fmc-elements-icon-tertiary: theme('colors.gray.500');
+
+  --fmc-elements-dividerColor: theme('colors.gray.100');
+
+  --fmc-elements-prompt-background: theme('colors.alpha.gray.80');
+
+  --fmc-elements-sidebar-dropdownShadow: theme('colors.alpha.gray.30');
+  --fmc-elements-sidebar-buttonBackgroundDefault: theme('colors.alpha.accent.10');
+  --fmc-elements-sidebar-buttonBackgroundHover: theme('colors.alpha.accent.20');
+  --fmc-elements-sidebar-buttonText: theme('colors.accent.500');
+
+  --fmc-elements-preview-addressBar-background: var(--fmc-elements-bg-depth-1);
+  --fmc-elements-preview-addressBar-backgroundHover: theme('colors.alpha.white.5');
+  --fmc-elements-preview-addressBar-backgroundActive: var(--fmc-elements-bg-depth-1);
+  --fmc-elements-preview-addressBar-text: var(--fmc-elements-textSecondary);
+  --fmc-elements-preview-addressBar-textActive: var(--fmc-elements-textPrimary);
+
+  --fmc-elements-terminals-background: var(--fmc-elements-bg-depth-1);
+  --fmc-elements-terminals-buttonBackground: var(--fmc-elements-bg-depth-3);
+
+  --fmc-elements-cta-background: theme('colors.alpha.white.10');
+  --fmc-elements-cta-text: theme('colors.white');
+
+  /* Terminal Colors */
+  --fmc-terminal-background: var(--fmc-elements-terminals-background);
+  --fmc-terminal-foreground: #eff0eb;
+  --fmc-terminal-selection-background: #97979b33;
+  --fmc-terminal-black: #000000;
+  --fmc-terminal-red: #ff5c57;
+  --fmc-terminal-green: #5af78e;
+  --fmc-terminal-yellow: #f3f99d;
+  --fmc-terminal-blue: #57c7ff;
+  --fmc-terminal-magenta: #ff6ac1;
+  --fmc-terminal-cyan: #9aedfe;
+  --fmc-terminal-white: #f1f1f0;
+  --fmc-terminal-brightBlack: #686868;
+  --fmc-terminal-brightRed: #ff5c57;
+  --fmc-terminal-brightGreen: #5af78e;
+  --fmc-terminal-brightYellow: #f3f99d;
+  --fmc-terminal-brightBlue: #57c7ff;
+  --fmc-terminal-brightMagenta: #ff6ac1;
+  --fmc-terminal-brightCyan: #9aedfe;
+  --fmc-terminal-brightWhite: #f1f1f0;
+  --modern-scrollbar-thumb-background: rgba(100, 100, 100, 0.3); // Example dark theme color (adjust as needed)
+  --modern-scrollbar-thumb-backgroundHover: rgba(10, 10, 10, 0.8);
+}
+
+/*
+ * Element Tokens
+ *
+ * Hierarchy: Element Token -> (Element Token | Color Tokens) -> Primitives
+ */
+:root {
+  --header-height: 54px;
+  --chat-max-width: 33rem;
+  --chat-min-width: 533px;
+  --workbench-width: min(calc(100% - var(--chat-min-width)), 2536px);
+  --workbench-inner-width: var(--workbench-width);
+  --workbench-left: calc(100% - var(--workbench-width));
+
+  /* Toasts */
+  --toastify-color-progress-success: var(--fmc-elements-icon-success);
+  --toastify-color-progress-error: var(--fmc-elements-icon-error);
+
+  /* Terminal */
+  --fmc-elements-terminal-backgroundColor: var(--fmc-terminal-background);
+  --fmc-elements-terminal-textColor: var(--fmc-terminal-foreground);
+  --fmc-elements-terminal-cursorColor: var(--fmc-terminal-foreground);
+  --fmc-elements-terminal-selection-backgroundColor: var(--fmc-terminal-selection-background);
+  --fmc-elements-terminal-color-black: var(--fmc-terminal-black);
+  --fmc-elements-terminal-color-red: var(--fmc-terminal-red);
+  --fmc-elements-terminal-color-green: var(--fmc-terminal-green);
+  --fmc-elements-terminal-color-yellow: var(--fmc-terminal-yellow);
+  --fmc-elements-terminal-color-blue: var(--fmc-terminal-blue);
+  --fmc-elements-terminal-color-magenta: var(--fmc-terminal-magenta);
+  --fmc-elements-terminal-color-cyan: var(--fmc-terminal-cyan);
+  --fmc-elements-terminal-color-white: var(--fmc-terminal-white);
+  --fmc-elements-terminal-color-brightBlack: var(--fmc-terminal-brightBlack);
+  --fmc-elements-terminal-color-brightRed: var(--fmc-terminal-brightRed);
+  --fmc-elements-terminal-color-brightGreen: var(--fmc-terminal-brightGreen);
+  --fmc-elements-terminal-color-brightYellow: var(--fmc-terminal-brightYellow);
+  --fmc-elements-terminal-color-brightBlue: var(--fmc-terminal-brightBlue);
+  --fmc-elements-terminal-color-brightMagenta: var(--fmc-terminal-brightMagenta);
+  --fmc-elements-terminal-color-brightCyan: var(--fmc-terminal-brightCyan);
+  --fmc-elements-terminal-color-brightWhite: var(--fmc-terminal-brightWhite);
+}

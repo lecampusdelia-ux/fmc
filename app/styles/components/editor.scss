@@ -1,0 +1,135 @@
+:root {
+  --cm-backgroundColor: var(--fmc-elements-editor-backgroundColor, var(--fmc-elements-bg-depth-1));
+  --cm-textColor: var(--fmc-elements-editor-textColor, var(--fmc-elements-textPrimary));
+
+  /* Gutter */
+
+  --cm-gutter-backgroundColor: var(--fmc-elements-editor-gutter-backgroundColor, var(--cm-backgroundColor));
+  --cm-gutter-textColor: var(--fmc-elements-editor-gutter-textColor, var(--fmc-elements-textSecondary));
+  --cm-gutter-activeLineTextColor: var(--fmc-elements-editor-gutter-activeLineTextColor, var(--cm-gutter-textColor));
+
+  /* Fold Gutter */
+
+  --cm-foldGutter-textColor: var(--fmc-elements-editor-foldGutter-textColor, var(--cm-gutter-textColor));
+  --cm-foldGutter-textColorHover: var(--fmc-elements-editor-foldGutter-textColorHover, var(--cm-gutter-textColor));
+
+  /* Active Line */
+
+  --cm-activeLineBackgroundColor: var(--fmc-elements-editor-activeLineBackgroundColor, rgb(224 231 235 / 30%));
+
+  /* Cursor */
+
+  --cm-cursor-width: 2px;
+  --cm-cursor-backgroundColor: var(--fmc-elements-editor-cursorColor, var(--fmc-elements-textSecondary));
+
+  /* Matching Brackets */
+
+  --cm-matching-bracket: var(--fmc-elements-editor-matchingBracketBackgroundColor, rgb(50 140 130 / 0.3));
+
+  /* Selection */
+
+  --cm-selection-backgroundColorFocused: var(--fmc-elements-editor-selection-backgroundColor, #42b4ff);
+  --cm-selection-backgroundOpacityFocused: var(--fmc-elements-editor-selection-backgroundOpacity, 0.3);
+  --cm-selection-backgroundColorBlured: var(--fmc-elements-editor-selection-inactiveBackgroundColor, #c9e9ff);
+  --cm-selection-backgroundOpacityBlured: var(--fmc-elements-editor-selection-inactiveBackgroundOpacity, 0.3);
+
+  /* Panels */
+
+  --cm-panels-borderColor: var(--fmc-elements-editor-panels-borderColor, var(--fmc-elements-borderColor));
+
+  /* Search */
+
+  --cm-search-backgroundColor: var(--fmc-elements-editor-search-backgroundColor, var(--cm-backgroundColor));
+  --cm-search-textColor: var(--fmc-elements-editor-search-textColor, var(--fmc-elements-textSecondary));
+  --cm-search-closeButton-backgroundColor: var(--fmc-elements-editor-search-closeButton-backgroundColor, transparent);
+
+  --cm-search-closeButton-backgroundColorHover: var(
+    --fmc-elements-editor-search-closeButton-backgroundColorHover,
+    var(--fmc-elements-item-backgroundActive)
+  );
+
+  --cm-search-closeButton-textColor: var(
+    --fmc-elements-editor-search-closeButton-textColor,
+    var(--fmc-elements-item-contentDefault)
+  );
+
+  --cm-search-closeButton-textColorHover: var(
+    --fmc-elements-editor-search-closeButton-textColorHover,
+    var(--fmc-elements-item-contentActive)
+  );
+
+  --cm-search-button-backgroundColor: var(
+    --fmc-elements-editor-search-button-backgroundColor,
+    var(--fmc-elements-item-backgroundDefault)
+  );
+
+  --cm-search-button-backgroundColorHover: var(
+    --fmc-elements-editor-search-button-backgroundColorHover,
+    var(--fmc-elements-item-backgroundActive)
+  );
+
+  --cm-search-button-textColor: var(--fmc-elements-editor-search-button-textColor, var(--fmc-elements-textSecondary));
+
+  --cm-search-button-textColorHover: var(
+    --fmc-elements-editor-search-button-textColorHover,
+    var(--fmc-elements-textPrimary)
+  );
+
+  --cm-search-button-borderColor: var(--fmc-elements-editor-search-button-borderColor, transparent);
+  --cm-search-button-borderColorHover: var(--fmc-elements-editor-search-button-borderColorHover, transparent);
+
+  --cm-search-button-borderColorFocused: var(
+    --fmc-elements-editor-search-button-borderColorFocused,
+    var(--fmc-elements-borderColorActive)
+  );
+
+  --cm-search-input-backgroundColor: var(--fmc-elements-editor-search-input-backgroundColor, transparent);
+  --cm-search-input-textColor: var(--fmc-elements-editor-search-input-textColor, var(--fmc-elements-textPrimary));
+  --cm-search-input-borderColor: var(--fmc-elements-editor-search-input-borderColor, var(--fmc-elements-borderColor));
+
+  --cm-search-input-borderColorFocused: var(
+    --fmc-elements-editor-search-input-borderColorFocused,
+    var(--fmc-elements-borderColorActive)
+  );
+
+  /* Tooltip */
+
+  --cm-tooltip-backgroundColor: var(--fmc-elements-editor-tooltip-backgroundColor, var(--cm-backgroundColor));
+  --cm-tooltip-textColor: var(--fmc-elements-editor-tooltip-textColor, var(--fmc-elements-textPrimary));
+
+  --cm-tooltip-backgroundColorSelected: var(
+    --fmc-elements-editor-tooltip-backgroundColorSelected,
+    theme('colors.alpha.accent.30')
+  );
+
+  --cm-tooltip-textColorSelected: var(
+    --fmc-elements-editor-tooltip-textColorSelected,
+    var(--fmc-elements-textPrimary)
+  );
+
+  --cm-tooltip-borderColor: var(--fmc-elements-editor-tooltip-borderColor, var(--fmc-elements-borderColor));
+
+  --cm-searchMatch-backgroundColor: var(--fmc-elements-editor-searchMatch-backgroundColor, rgba(234, 92, 0, 0.33));
+}
+
+html[data-theme='light'] {
+  --fmc-elements-editor-gutter-textColor: #237893;
+  --fmc-elements-editor-gutter-activeLineTextColor: var(--fmc-elements-textPrimary);
+  --fmc-elements-editor-foldGutter-textColorHover: var(--fmc-elements-textPrimary);
+  --fmc-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 5%);
+  --fmc-elements-editor-tooltip-backgroundColorSelected: theme('colors.alpha.accent.20');
+  --fmc-elements-editor-search-button-backgroundColor: theme('colors.gray.100');
+  --fmc-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.gray.10');
+}
+
+html[data-theme='dark'] {
+  --cm-backgroundColor: var(--fmc-elements-bg-depth-2);
+  --fmc-elements-editor-gutter-textColor: var(--fmc-elements-textTertiary);
+  --fmc-elements-editor-gutter-activeLineTextColor: var(--fmc-elements-textSecondary);
+  --fmc-elements-editor-selection-inactiveBackgroundOpacity: 0.3;
+  --fmc-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 50%);
+  --fmc-elements-editor-foldGutter-textColorHover: var(--fmc-elements-textPrimary);
+  --fmc-elements-editor-matchingBracketBackgroundColor: rgba(66, 180, 255, 0.3);
+  --fmc-elements-editor-search-button-backgroundColor: theme('colors.gray.800');
+  --fmc-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.white.10');
+}
